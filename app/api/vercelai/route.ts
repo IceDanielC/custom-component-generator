@@ -6,7 +6,7 @@ import { env } from '@/lib/env.mjs';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions.mjs';
 import { model } from './settings';
 
-export const formatMessages = (messages: ChatCompletionMessageParam[]) => {
+const formatMessages = (messages: ChatCompletionMessageParam[]) => {
   return messages.map((message) => {
     return {
       ...message,

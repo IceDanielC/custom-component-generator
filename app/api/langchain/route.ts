@@ -40,7 +40,7 @@ export async function POST(req: Request) {
         baseURL: env.AI_BASE_URL,
         ...(env.HTTP_AGENT ? { httpAgent: new HttpsProxyAgent(env.HTTP_AGENT) } : {})
       },
-      modelName: env.MODEL, //sonnet-3.5-latest
+      modelName: env.MODEL, //claude-3-5-sonnet
       maxTokens: 4096
     });
 
