@@ -30,10 +30,12 @@ export async function POST(req: Request) {
 
   try {
     const vectorStore = await initVectorStore();
+    // 创建一个retriever函数，用来从向量库中检索出相关内容
     const retriever = async (query: string) => {
       return await vectorStore.similaritySearchWithScore(query, 5);
     };
 
+    // 创建一个llm，用来生成回答
     const llm = new ChatOpenAI({
       openAIApiKey: env.AI_KEY,
       configuration: {

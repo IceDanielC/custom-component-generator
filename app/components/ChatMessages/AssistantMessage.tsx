@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Avatar, Button, Badge } from 'antd';
+import { Avatar, Button, Badge, Tag } from 'antd';
 import { CopyOutlined, FileOutlined, RedoOutlined } from '@ant-design/icons';
 import { Markdown } from '../Markdown';
 import { isEqual } from 'lodash';
@@ -57,6 +57,7 @@ const AssistantMessage: React.FC<AssistantMessageProps> = memo(
             <Button size="small" type="default" icon={<RedoOutlined />} onClick={onRetry}>
               Retry
             </Button>
+            <Tag color="blue">Model: {process.env.NEXT_PUBLIC_MODEL}</Tag>
           </div>
         </div>
       </div>
